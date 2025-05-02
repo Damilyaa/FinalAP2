@@ -43,7 +43,7 @@ function Login() {
 
       // Store the token in localStorage
       localStorage.setItem('token', response.data.token);
-      navigate('/');
+      navigate('/home');
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed');
     }

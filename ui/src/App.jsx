@@ -3,7 +3,9 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Login from './components/Login';
 import Register from './components/Register';
+import Home from "./components/Home.jsx"
 import './App.css';
+import Header from "./components/Header.jsx";
 
 const theme = createTheme({
   palette: {
@@ -55,12 +57,13 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
+        <Header />
         <div className="app">
           <main className="main-content">
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
-              <Route path="/" element={<Navigate to="/login" replace />} />
+              <Route path="/home" element={<Home />} />
             </Routes>
           </main>
         </div>
